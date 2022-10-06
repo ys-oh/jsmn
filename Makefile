@@ -15,6 +15,9 @@ test_strict_links: test/tests.c jsmn.h
 	$(CC) -DJSMN_STRICT=1 -DJSMN_PARENT_LINKS=1 $(CFLAGS) $(LDFLAGS) $< -o test/$@
 	./test/$@
 
+jsmn_helper: example/jsmn_helper.c jsmn.h jsmn_helper.h
+	$(CC) -I. $(LDFLAGS) $< -o $@
+
 simple_example: example/simple.c jsmn.h
 	$(CC) $(LDFLAGS) $< -o $@
 
