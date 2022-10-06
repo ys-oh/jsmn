@@ -464,6 +464,8 @@ JSMN_API void jsmn_init(jsmn_parser *parser) {
 
 #endif /* JSMN_HEADER */
 
+#include "jsmn_helper.h"
+
 #ifdef __cplusplus
 }
 #endif
