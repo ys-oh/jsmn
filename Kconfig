@@ -21,7 +21,7 @@ config JSMN_STRICT
     for performance, it can be disabled.
 
 config JSMN_FLOAT
-  bool "jsmn helper conversion enable"
+  bool "jsmn helper float conversion enable"
   default n
   help
     jsmn helper support float point conversion
