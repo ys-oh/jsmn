@@ -20,4 +20,11 @@ config JSMN_STRICT
     jsmn check ':' in JSON object.
     for performance, it can be disabled.
 
+config JSMN_FLOAT
+  bool "jsmn helper conversion enable"
+  default n
+  help
+    jsmn helper support float point conversion
+    with 'atof()' function
+
 endmenu

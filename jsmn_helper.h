@@ -77,7 +77,7 @@ JSMN_API int jsmn_get_bool(const char* json, jsmntok_t* tok, bool* value);
  * @param value value out
  * @return int 0 if success, otherwise -1
  */
-JSMN_API int jsmn_get_integer(const char* json, jsmntok_t* tok, int32_t* value);
+JSMN_API int jsmn_get_integer(const char* json, jsmntok_t* tok, int* value);
 
 
 /**
@@ -221,7 +221,7 @@ JSMN_API int jsmn_get_bool(const char* json, jsmntok_t* tok, bool* value)
     return -1;
 }
 
-JSMN_API int jsmn_get_integer(const char* json, jsmntok_t* tok, int32_t* value)
+JSMN_API int jsmn_get_integer(const char* json, jsmntok_t* tok, int* value)
 {
     if (!tok || tok->type != JSMN_PRIMITIVE)
         return -1;
@@ -234,6 +234,7 @@ JSMN_API int jsmn_get_integer(const char* json, jsmntok_t* tok, int32_t* value)
     return 0;
 }
 
+#if defined(JSMN_FLOAT)
 JSMN_API int jsmn_get_float(const char* json, jsmntok_t* tok, float* value)
 {
     if (!tok || tok->type != JSMN_PRIMITIVE)
@@ -246,6 +247,7 @@ JSMN_API int jsmn_get_float(const char* json, jsmntok_t* tok, float* value)
     *value = atof(buffer);
     return 0;
 }
+#endif
 
 JSMN_API int jsmn_get_string(const char* json, jsmntok_t* tok, char* buf, int buf_len)
 {
