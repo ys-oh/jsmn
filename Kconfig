@@ -1,0 +1,23 @@
+
+config JSMN
+  bool "enable jsmn"
+  default y
+  help
+    jsmn enable
+
+menu "jsmn"
+
+config JSMN_PARENT_LINKS
+  bool "enable jsmn parent link"
+  default n
+  help
+    jsmn token link parent object
+
+config JSMN_STRICT
+  bool "enable jsmn strict parsing"
+  default n
+  help
+    jsmn check ':' in JSON object.
+    for performance, it can be disabled.
+
+endmenu

@@ -30,12 +30,26 @@
 extern "C" {
 #endif
 
+#if defined(CONFIG_JSMN_PARENT_LINKS)
+#define JSMN_PARENT_LINKS
+#endif
+
+#if defined(CONFIG_JSMN_STRICT)
+#define JSMN_STRICT
+#endif
+
+#ifndef JSMN_BUILD
+#define JSMN_HEADER
+
 #ifdef JSMN_STATIC
 #define JSMN_API static
 #else
 #define JSMN_API extern
 #endif
 
+#else
+#define JSMN_API
+#endif
 /**
  * JSON type identifier. Basic types are:
  * 	o Object
